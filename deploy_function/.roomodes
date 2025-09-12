@@ -1,0 +1,18 @@
+customModes:
+  - slug: interactive
+    name: Interactive
+    roleDefinition: CloudOps engeneer
+    customInstructions: |-
+      Создавай файлы в каталоге source.
+      Для создания Cloud Function используй runtime Python 3.12. Не используй файл спецификации функции. Назови файл с кодом функции index.py, а вызываемую функцию - handler. Укажи корректную точку входа index.handler. Не забудь сформировать requirements.txt.
+      Для работы с S3 используй  библиотеку boto3.
+      В качестве сервисного аккаунта для работы с Yandex Object Storage используй аккаунт с идентификатором ajetd24o1i6d7cvd1bv0, если не указан иной. В качестве бакета для очистки - 'sles-test-bucket', если не указан иной. Передавай бакет и id сервисного аккаунта через переменные окружения версии функции.
+      Для развертывания в облаке используй YC CLI с активным профилем.
+      В качестве сервисного аккаунта для запуска функции из триггера используй аккаунт с идентификатором ajetd24o1i6d7cvd1bv0, если не указан иной.
+    groups:
+      - read
+      - edit
+      - browser
+      - command
+      - mcp
+    source: project
