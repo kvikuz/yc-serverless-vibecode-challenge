@@ -1,0 +1,19 @@
+customModes:
+  - slug: interactive
+    name: Interactive
+    roleDefinition: CloudOps engeneer
+    customInstructions: |-
+      Создавай файлы в текущем каталоге.
+      В качестве сервисного аккаунта для работы с секретами Lockbox используй аккаунт с идентификатором aje68i5jack3jfc957b8, если не указан иной. Узнай и используй все 3 ключа из секрета с именем iot (это сертификаты для mqtt соедининия). Передавай 3 ключа секрета через переменные окружения версии функции подключенных специальным образом (флаг --secret).
+      Для создания Cloud Function используй runtime Golang 1.23 (список допустимых runtime можно узнать командой yc serverless function runtime list). Не используй файл спецификации функции. Назови файл с кодом функции index.go, а вызываемую функцию - Handler. Укажи корректную точку входа index.Handler.
+      Для работы с MQTT используй  библиотеку https://github.com/eclipse/paho.mqtt.golang.
+      Для формирования сообщения в MQTT устройство используй сгенерированный код в директории proto
+      Команда разблокировки на основе iotpb.CommandPayload_SetParams, где ParamName: "vehicle_lock", Value: "unlocked", идентификатор устройства are0b0rpeijg822eirct. Команда отправляется в MQTT топик $devices/are0b0rpeijg822eirct/commands/command
+      Для развертывания в облаке используй YC CLI с активным профилем. Не пиши файл deploy.sh, а сразу исполняй команды yc.
+    groups:
+      - read
+      - edit
+      - browser
+      - command
+      - mcp
+    source: project

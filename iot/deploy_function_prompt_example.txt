@@ -1,0 +1,3 @@
+Напиши Yandex Cloud Function для разблокировки байка в IoT Core по MQTT протоколу.
+Создай API Gateway для вызова функции по http GET запросу.
+Задеплой в Yandex Cloud
