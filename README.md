@@ -33,18 +33,23 @@
     ```bash
     curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
     ```
+
     4.2. Перезапустить командную оболочку.
     4.3. Выполнить
     ```bash
     yc init --federation-id=<federation-id>
     ```
+
     Создать новый профиль.
     4.4. Вернуться в интерфейс командной строки. Выбрать в списке <cloud-id>. Выбрать в нем <folder-id>. Выбрать дефолтную зону доступности, например, 'ru-central1-d'.
 
 # Специфичные настройки окружения
 
 ## Настройки для задания Deploy Cloud Function
-1. Создать Service Account для работы с Object Storage.
-2. Создать Object Storage бакет с названием 'sles-test-bucket' и в его ACL дать доступ для SA, созданному на предыдущем шаге, на READ_WRITE.
-3. Создать Service Account для запуска Cloud Functions. Это может быть тот же SA, что и для работы с Object Storage. Выдать ему роль functions.functionInvoker' на уровне каталога.
-4. Прописать id этих Service Accounts в файле .roomodes.
+1. Создать Service Account 'sles-vibecoding' для работы с Object Storage.
+2. Создать Object Storage бакет с названием 'sles-vibecoding' и в его ACL дать доступ для SA, созданному на предыдущем шаге, на READ_WRITE.
+3. Создать Service Account для запуска Cloud Functions. Это может быть тот же SA, что и для работы с Object Storage. Выдать ему роль 'functions.functionInvoker' на уровне каталога.
+
+# Специфичные настройки для задания IOT Core
+
+Отсутствуют.
